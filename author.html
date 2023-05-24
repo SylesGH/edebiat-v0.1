@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <link rel="stylesheet" href="./settings/global style.css"> 
+    <link rel="stylesheet" href="./style/media.css">
+    <link rel="stylesheet" href="./style/theme.css">
+    <link rel="stylesheet" href="./style/topbar.css">
+    <link rel="stylesheet" href="./style/author.css">
+    <link rel="stylesheet" href="./style/search-media.css">
+    <script src="./source/author.js" defer async></script>
+    <script src="./source/theme.js" defer></script>
+    <title>Edebite | </title>
+</head>
+<body onload="setTheme()">
+    <header>
+        <nav class="top">
+            <div class="back" title="Geri git"></div>
+            <div class="search">
+                <form onsubmit="return hasValue()">
+                    <input id="searchInput" type="text" placeholder="Ara..." autocomplete="off">
+                    <button type="submit" title="Ara">
+                        <img src="./img/search.svg" alt="reload">
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="img-wrapper">
+            <svg class="grain" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <filter id="a">
+                    <feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3" stitchTiles="stitch"/>
+                </filter>
+                <rect width="100%" height="100%" filter="url(#a)"/>
+            </svg>            
+            <img class="author-img" src="" alt="reload">
+            <div class="shine"></div>
+        </div>
+        <div class="inf">
+            <h1 class="full-name"></h1>
+            <p class="bio"></p>
+        </div>
+    </main>
+</body>
+</html>

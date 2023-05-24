@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <link rel="stylesheet" href="./settings/global style.css">
+    <link rel="stylesheet" href="./style/topbar.css">
+    <link rel="stylesheet" href="./style/search.css">
+    <link rel="stylesheet" href="./style/media.css">
+    <link rel="stylesheet" href="./style/theme.css">
+    <link rel="stylesheet" href="./style/search-media.css">
+    <script src="./source/easter.js" defer async></script>
+    <script src="./source/internet-speed.js" defer></script>
+    <script src="./source/search.js" defer async></script>
+    <script src="./source/theme.js" defer></script>
+    <title>Edebite | Ara</title>
+</head>
+<body onload="setTheme(); searchInput.focus();">
+    <div class="searchbar">
+        <div class="home" title="Anasayfa" onclick="returnToHomePage()">
+            <svg width="25" height="25" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M29.742 24.884V15.352c0 -0.914 0 -1.376 -0.112 -1.806a3.45 3.45 0 0 0 -0.48 -1.056c-0.25 -0.366 -0.592 -0.668 -1.286 -1.274L19.618 4.002c-1.284 -1.12 -1.926 -1.684 -2.644 -1.898a3.434 3.434 0 0 0 -1.948 0c-0.724 0.214 -1.364 0.774 -2.646 1.892l-8.244 7.22c-0.69 0.606 -1.04 0.908 -1.288 1.274 -0.218 0.322 -0.382 0.68 -0.48 1.056 -0.112 0.43 -0.112 0.892 -0.112 1.806v9.532c0 1.6 0 2.4 0.26 3.032 0.35 0.842 1.02 1.512 1.862 1.862 0.632 0.26 1.432 0.26 3.032 0.26 1.598 0 2.402 0 3.036 -0.26 0.84 -0.35 1.504 -1.02 1.856 -1.862 0.26 -0.632 0.26 -1.432 0.26 -3.032v-1.716c0 -2.648 2.864 -4.298 5.154 -2.976 1.062 0.612 1.72 1.744 1.72 2.976v1.716c0 1.6 0 2.4 0.262 3.032 0.344 0.842 1.016 1.512 1.856 1.862 0.634 0.26 1.432 0.26 3.038 0.26 1.596 0 2.4 0 3.028 -0.26a3.44 3.44 0 0 0 1.862 -1.862c0.26 -0.632 0.26 -1.432 0.26 -3.032Z" stroke="var(--color-3)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <input id="searchInput" name="s" type="text" placeholder="Ara..." autocomplete="off" title="Ara">
+        <div class="resultPerPageWrapper">
+            <span>Sayfa başı </span>
+            <select name="resultPerPage" id="resultPerPage" title="Sayfada görünecek sonuç sayısını seç">
+                <option value="12" selected>12</option>
+                <option value="16">16</option>
+                <option value="20">20</option>
+                <option value="24">24</option>
+                <option value="28">28</option>
+                <option value="32">32</option>
+                <option value="36">36</option>
+                <option value="40">40</option>
+            </select>
+            <span> sonuç gösteriliyor.</span> 
+        </div>     
+    </div>
+    <div class="paginationControls">
+        <button class="firstPageBtn" onclick="page = 0; reload()">l&lt;</button>
+        <button class="prevPageBtn" onclick="previousPage()">&lt;</button>
+        <span class="pageNums"></span>
+        <button class="nextPageBtn" onclick="nextPage()">&gt;</button>
+        <button class="lastPageBtn" onclick="page = 999; reload()">&gt;l</button>
+    </div>
+    <div class="searchResults"></div>
+    <div class="no-result hidden">
+        <div class="polaroid">
+            <!-- <div class="image-wrapper">
+                <img src="https://i.pinimg.com/564x/19/50/99/1950990f2d884a7807eb4012f88c159f.jpg" alt="reload">
+            </div> -->
+            <h1 id="polaroidText">Sonuç bulunamadı.</h1>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+@media screen and (max-width: 375px) {
+    main h1 {
+        font-size: 15vw;
+        bottom: 0rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .popular {
+        padding: 3rem 2.5rem !important;
+    }
+
+    .popular .author-wrapper li a .img-wrapper {
+        width: 100px;
+        height: 200px;
+    }
+
+    .popular .author-wrapper li {
+        padding: 1rem !important;
+    }
+
+    .popular .author-wrapper {
+        height: unset !important;
+    }
+
+    .searchbar {
+        justify-content: center !important;
+    }
+
+    .searchbar #searchInput {
+        width: 230px;
+        position: relative;
+    }
+
+    main p {
+        width: 100%;
+    }
+
+    .theme-popup .popup {
+        height: 25rem !important;
+        width: 20rem;
+    }
+
+    .theme-popup .popup .theme {
+        height: 4rem;
+        aspect-ratio: 1;
+    }
+
+    .result .desc {
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    .result .author {
+        right: 0;
+        left: 1rem;
+        bottom: 0.7rem;
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .result .read {
+        justify-content: flex-end;
+        align-items: flex-end;
+        background: none;
+        backdrop-filter: blur(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .read button {
+        margin: 0 0.5rem 0.5rem;
+        scale: 1;
+    }
+
+    .searchResults {
+        margin: 0.25rem 0rem 9rem;
+        gap: .75rem;
+        row-gap: .75rem;
+    }
+
+    .searchResults .result {
+        margin: 0 1.1rem;
+        margin-top: 0;
+    }
+
+    main h1 {
+        font-size: 15vw;
+        bottom: 3rem;
+    }
+
+    .top .search button {
+        position: relative;
+        border-radius: var(--search-border-radius);
+    }
+
+    .top .search form #searchInput {
+        width: 275px;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main .inf {
+        text-align: center;
+    }
+
+    main .inf .bio {
+        padding-right: 0;
+        padding: 0 2rem 80%;
+        text-align: start;
+    }
+
+    .firstPageBtn, .lastPageBtn {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .recomended-list {
+        display: flex !important;
+        padding-right: 0 !important;
+    }
+
+    .recomended-list::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1135px) {
+    .searchbar .resultPerPageWrapper span {
+        display: none;
+    }
+
+    .searchbar .resultPerPageWrapper #resultPerPage {
+        position: relative;
+        left: .5rem;
+    }
+}

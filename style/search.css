@@ -1,0 +1,232 @@
+body {
+    background-color: var(--color-4);
+}
+
+/* search */
+.searchResults {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(var(--result-width), 1fr));
+    gap: .75rem;
+    row-gap: 0;
+    margin: 0.25rem 1rem 5.5rem;
+    position: relative;
+    top: 70px;
+}
+
+.result {
+    border-radius: 5px;
+    background-color: var(--color-3);
+    aspect-ratio: 1.9 / 1;
+    margin-top: 0.75rem;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.result h2 {
+    margin-bottom: .3rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.result .desc {
+    text-align: start;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.result .author {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1rem;
+}
+
+.read {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all 0.2s;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(3px);
+}
+
+.read button {
+    width: 120px;
+    aspect-ratio: 3 / 1;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: var(--color-4);
+    color: var(--color-1);
+    user-select: none;
+    scale: 0.7;
+    transition: scale 0.2s;
+}
+
+.result:hover .read button {
+    scale: 1;
+}
+
+.result:hover .read button:hover {
+    scale: 1.1;
+}
+
+.read button:hover {
+    background-color: var(--color-2);
+    color: var(--color-4);
+    transition: scale 0.1s;
+}
+
+.result:hover .read {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.read.hidden {
+    visibility: hidden;
+    opacity: 0.5;
+    scale: 0.6;
+    filter: blur(5px);
+    transform: translateY(-30%);
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+    scale: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.animate {
+    transition: all 0.3s cubic-bezier(0.54, 0.49, 0, 1.5);
+}
+
+/* controls */
+.paginationControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 100px;
+    padding: .4rem .2rem;
+    user-select: none;
+}
+
+.paginationControls button, span.ellipsis {
+    background-color: var(--color-2);
+    color: var(--color-3);
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0 .25rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.paginationControls button:hover {
+    background-color: var(--color-3);
+    color: var(--color-4);
+}
+
+.paginationControls button.unavaible {
+    background-color: var(--color-1);
+    color: var(--color-2);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+span.ellipsis {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-1);
+    color: var(--color-3);
+    cursor: auto;
+}
+
+.pageNums {
+    display: flex;
+}
+
+.pageNum.active {
+    background-color: var(--color-4);
+    color: var(--color-3);
+    box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.3) inset;
+    pointer-events: none;
+}
+
+.no-result {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-result.hidden, .paginationControls.hidden {
+    display: none;
+}
+
+.polaroid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.top .search button {
+    position: relative;
+    right: 39px;
+}
+
+#searchInput {
+    border-radius: var(--search-border-radius);
+}
+
+div.home {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    cursor: pointer;
+}
+
+.firstPageBtn, .lastPageBtn {
+    outline: 0.4rem solid rgba(0, 0, 0, 0.2);
+    position: absolute;
+}
+
+.firstPageBtn {
+    left: -60px;
+}
+
+.lastPageBtn {
+    right: -60px;
+}

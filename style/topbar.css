@@ -1,0 +1,111 @@
+.top {
+    height: 8vh;
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-1);
+}
+
+.top .search form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top .search input {
+    width: 500px;
+    height: 100%;
+    border-radius: var(--search-border-radius);
+    background-color: var(--color-3);
+    outline: none;
+    border: none;
+    font-size: 15px;
+    padding: 0 20px;
+}
+
+.top .search button {
+    height: 100%;
+    width: calc(8vh - 20px);
+    /* position: relative;
+    right: 39px; */
+    border-radius: 0 var(--search-border-radius) var(--search-border-radius) 0;
+    background: var(--color-2);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.top .search input:hover + button {
+    background: var(--color-3);
+}
+
+.top .search button img {
+    margin: 0 4px 1px 0;
+}
+
+#searchInput {
+    width: 500px;
+    height: 100%;
+    border-radius: var(--search-border-radius) 0 0 var(--search-border-radius);
+    background-color: var(--color-2);
+    outline: none;
+    border: none;
+    font-size: 15px;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+#searchInput:hover {
+    background-color: var(--color-3);
+}
+
+.searchbar, .top {
+    height: 60px;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-1);
+    z-index: 99;
+}
+
+.searchbar {
+    align-items: center;
+}
+
+.resultPerPageWrapper {
+    position: absolute;
+    right: 2rem;
+    display: flex;
+    gap: .4rem;
+}
+
+.resultPerPageWrapper #resultPerPage {
+    appearance: none;
+    outline: none;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    color: var(--color-4);
+    cursor: pointer;
+    display: flex;
+}
+
+.resultPerPageWrapper #resultPerPage option {
+    background: var(--color-3);
+    color: var(--color-1);
+}
+
+.resultPerPageWrapper #resultPerPage option:active {
+    background-color: var(--color-1);
+    color: var(--color-3);
+}

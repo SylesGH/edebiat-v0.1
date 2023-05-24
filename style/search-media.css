@@ -1,0 +1,21 @@
+@media screen and (max-width: 600px) {
+    .top .search form {
+        justify-content: flex-start !important;
+        position: relative;
+        left: 15px;
+    }
+     
+    .top .search {
+        width: inherit;
+        position: relative;
+        left: 1.5rem;
+    }
+
+    .top .search form #searchInput {
+        width: 240px;
+    }
+
+    .top .back {
+        justify-content: start;
+    }
+}
