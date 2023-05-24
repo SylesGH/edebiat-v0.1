@@ -33,7 +33,7 @@ const author = document.querySelector(".author")
 const back = document.querySelector(".back")
 
 back.addEventListener("click", () => {
-    if (window.history.length <= 2) {
+    if (!sessionStorage.getItem("fromMain")) {
         window.location.replace("search.html")
     } else {
         window.location.href = localStorage.getItem("backLink")

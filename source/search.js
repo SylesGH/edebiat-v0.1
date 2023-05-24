@@ -202,7 +202,7 @@ function displayResults(pageNumber, datas, numPages) {
                 <h5 class="author">${result.author}</h5>  
                 <div class="read">
                 <a href="./result.html?q=${result.id}">
-                    <button onclick="localStorage.setItem('backLink', window.location.href)" title="Ne yazıyosa o">Oku</button>
+                    <button onclick="localStorage.setItem('backLink', window.location.href); sessionStorage.setItem('fromMain', true)" title="Ne yazıyosa o">Oku</button>
                 </a>
                 </div>      
             </div>

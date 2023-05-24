@@ -81,11 +81,12 @@ async function recomendPiece(data, count) {
 }
 
 function redirectPage(id) {
+    localStorage.setItem("backLink", window.location.href)
+    sessionStorage.setItem("fromMain", true)
     if (searchInput.value !== "") {
         localStorage.setItem("searchValue", searchInput.value);
     }
     localStorage.setItem("resultId", id)
-    localStorage.setItem("backLink", window.location.href)
 }
 
 const topBar = document.querySelector(".top")
